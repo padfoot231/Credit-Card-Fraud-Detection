@@ -10,10 +10,10 @@ Training:
 To run this code in anaconda prompt write command:
 
 
-activate tensorflow
+>>activate tensorflow
 
 
-python train.py
+>>python train.py
 
 
 The link to the dataset on kaggle is:
