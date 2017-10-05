@@ -1,8 +1,6 @@
 import pandas as pd, numpy as np, matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import KFold, cross_val_score, train_test_split
-#from sklearn.linear_model import SGDClassifier
-#import cPickle as pk
 import tensorflow as tf
 
 df = pd.read_csv('creditcard.csv')
@@ -25,18 +23,6 @@ y_test = y[274807:]
 batch = 50
 num = y.shape[0]
 num_train = num - 10000
-# X=df.iloc[:,[1,2,3,4,5,6,7,9,10]].values
-# y=df.iloc[:,8].values
-# ID=df.iloc[:,0].values
-# y_list = y.tolist()
-# for i in range(len(y_list)):
-#    y_list[i] = int(y_list[i])
-# n_values = np.max(y_list) + 1
-# y = np.eye(n_values)[y_list]
-# y = y.astype(float)
-# X = X.astype(float)
-# training_set = np.concatenate((X,y),axis=1)
-#np.random.shuffle(training_set)
 print(X.shape,y.shape)
 def weights(shape):
     initial = tf.truncated_normal(shape,stddev = 0.1)
@@ -68,20 +54,12 @@ with tf.Session() as sess:
 		print('epoch',j)
 		l = []
 		for i in range(5496):
-			#print('step:',i)
 			x_batch = X[0:num_train][i*50:i*50+50,:]
 			y_batch = y[0:num_train][i*50:i*50+50,:]
 			sess.run(train_step,{x:x_batch,y_:y_batch})
 			print('loss ',sess.run(cross_entropy,{x:x_batch,y_:y_batch}))
-			# print('accuracy ',sess.run(accuracy,{x:x_batch,y_:y_batch}))
 		for k in range(200):
 			x_batch_test = X[num_train:][k*50:k*50+50,:]
 			y_batch_test = y[num_train:][k*50:k*50+50,:]
 			l.append(sess.run(accuracy,{x:x_batch_test,y_:y_batch_test}))
 		print('testing accuracy',mean(l))			
-
-# for k in xrange(bat_test):	
-# 	X_batch_test=X_test[k*bst:k*bst+bst,:]
-# 	y_batch_test=y_test[k*bst:k*bst+bst]
-# 	sc=model.score(X_batch_test, y_batch_test)
-# 	mean.append(sc)
