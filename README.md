@@ -1,4 +1,4 @@
-# Credit-Card-Fraud-Detection-Scikit_Learn-Code
+# Credit-Card-Fraud-Detection
 
 Introduction:
 
