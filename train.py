@@ -66,7 +66,6 @@ with tf.Session() as sess:
 	sess.run(tf.global_variables_initializer())
 	for j in range(15):
 		print('epoch',j)
-		saver.save(sess,'C:\\Users\\Akshaya\\Downloads\\creditcard\\model',global_step = j)
 		l = []
 		for i in range(5496):
 			#print('step:',i)
