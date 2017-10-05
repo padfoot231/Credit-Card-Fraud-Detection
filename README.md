@@ -7,8 +7,12 @@ The project is an implementation of tensorflow model on credit-card-fraud detect
 
 Training:
 
-in line 57 provide location where you want to save the model, to run this function in anaconda prompt write command
+To run this code in anaconda prompt write command:
+
+
 activate tensorflow
+
+
 python train.py
 
 
