@@ -5,7 +5,12 @@ The project is an implementation of tensorflow model on credit-card-fraud detect
 
 
 Training:
-in line 57 provide location where you want to save the model, to run this function in anaconda prompt write command
 
+in line 57 provide location where you want to save the model, to run this function in anaconda prompt write command
 activate tensorflow
 python train.py
+
+
+The link to the dataset on kaggle is:
+
+https://www.kaggle.com/dalpozz/creditcardfraud
